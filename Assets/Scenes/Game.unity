@@ -960,9 +960,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Game.Ads.RewardAd, Assembly-CSharp
-        m_MethodName: Show
+      - m_Target: {fileID: 460656592}
+        m_TargetAssemblyTypeName: Game.Ad.UI.RewardAdButton, Assembly-CSharp
+        m_MethodName: ShowAd
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -30,7 +30,7 @@ namespace Game.Ad {
 			_ad.LoadAd(request);
 		}
 		public void Show() {
-			if (_ad.IsLoaded()) {
+			if (IsLoaded) {
 				_ad.Show();
 			}
 		}

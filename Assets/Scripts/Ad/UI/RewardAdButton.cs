@@ -12,6 +12,23 @@ namespace Game.Ad.UI {
 		[SerializeField] private TMP_Text _label;
 		[SerializeField] private AdBonus _ad;
 
+		public void ShowAd() {
+			_ad.Show();
+		}
+
+		private void LockFailed() {
+			_button.interactable = false;
+			_label.text = _failText;
+		}
+		private void LockRewarded() {
+			_button.interactable = false;
+			_label.text = _claimedText;
+		}
+		private void Unlock() {
+			_button.interactable = true;
+			_label.text = $"+{_ad.BonusAmount}";
+		}
+
 		private void OnEnable() {
 			_button.interactable = false;
 			_label.text = _loadingText;
@@ -30,19 +47,6 @@ namespace Game.Ad.UI {
 			_ad.Loaded -= Unlock;
 			_ad.Rewarded -= LockRewarded;
 			_ad.LoadFailed += LockFailed;
-		}
-
-		private void LockFailed() {
-			_button.interactable = false;
-			_label.text = _failText;
-		}
-		private void LockRewarded() {
-			_button.interactable = false;
-			_label.text = _claimedText;
-		}
-		private void Unlock() {
-			_button.interactable = true;
-			_label.text = $"+{_ad.BonusAmount}";
 		}
 	}
 }
